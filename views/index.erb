@@ -1,0 +1,18 @@
+<form action="/" method="post">
+  <input type="text" name="query"/><br />	
+  <input type="submit" />
+</form>
+
+<% if @results %>
+	<table>
+		<%@results.each do |r|%>
+		<tr valign="top">
+			<td><%=r.inspect%></td>
+			<td><img src="<%=r.profile_image_url%>"></td>
+			<td>
+				<p><%=r.from_user%> <%=r.text%></p>
+			</td>
+		</tr>
+		<%end%>
+<% end %>
+</table>
